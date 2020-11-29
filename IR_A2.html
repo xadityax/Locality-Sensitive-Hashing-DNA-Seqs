@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module IR_A2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>IR_A2</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Caditya%20agarwal%5C.spyder-py3%5Cir%5Cir_a2.py">c:\users\aditya agarwal\.spyder-py3\ir\ir_a2.py</a></font></td></tr></table>
+    <p><tt>Created&nbsp;on&nbsp;Sun&nbsp;Oct&nbsp;25&nbsp;13:21:05&nbsp;2020<br>
+&nbsp;<br>
+@author:&nbsp;Aditya&nbsp;Agarwal</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="PIL.Image.html">PIL.Image</a><br>
+<a href="PIL.ImageTk.html">PIL.ImageTk</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+<a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="pandas.html">pandas</a><br>
+<a href="time.html">time</a><br>
+</td><td width="25%" valign=top><a href="tkinter.html">tkinter</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-MinHashingNumpy"><strong>MinHashingNumpy</strong></a>(df_shingles, num_hashes=100)</dt><dd><tt>This&nbsp;function&nbsp;generates&nbsp;random&nbsp;permutations&nbsp;of&nbsp;indices&nbsp;and&nbsp;then<br>
+for&nbsp;each&nbsp;permutation&nbsp;it&nbsp;generates&nbsp;the&nbsp;signatures.&nbsp;Numpy&nbsp;is&nbsp;used<br>
+to&nbsp;accelerate&nbsp;the&nbsp;process.&nbsp;The&nbsp;first&nbsp;occurence&nbsp;of&nbsp;a&nbsp;'1'&nbsp;for&nbsp;a<br>
+shingle&nbsp;is&nbsp;used&nbsp;to&nbsp;generate&nbsp;the&nbsp;signature&nbsp;for&nbsp;a&nbsp;doc.</tt></dd></dl>
+ <dl><dt><a name="-comp"><strong>comp</strong></a>(item)</dt><dd><tt>helper&nbsp;function&nbsp;to&nbsp;compare&nbsp;similarity&nbsp;score&nbsp;for&nbsp;sorting&nbsp;docs</tt></dd></dl>
+ <dl><dt><a name="-doLSH"><strong>doLSH</strong></a>(df_signature, rows_band=5)</dt><dd><tt>Actual&nbsp;LSH&nbsp;starts&nbsp;here&nbsp;using&nbsp;the&nbsp;signature&nbsp;matrix.&nbsp;Documents&nbsp;in&nbsp;the&nbsp;same&nbsp;band&nbsp;that&nbsp;are&nbsp;similar&nbsp;<br>
+have&nbsp;higher&nbsp;probability&nbsp;of&nbsp;landing&nbsp;in&nbsp;the&nbsp;same&nbsp;bucket.&nbsp;Returns&nbsp;the&nbsp;buckets&nbsp;list&nbsp;which&nbsp;contains<br>
+buckets&nbsp;for&nbsp;documents.</tt></dd></dl>
+ <dl><dt><a name="-doShingling"><strong>doShingling</strong></a>(direc, length_shingle=5)</dt><dd><tt>Performs&nbsp;shingling&nbsp;and&nbsp;builds&nbsp;incidence&nbsp;matrix&nbsp;for&nbsp;shingles</tt></dd></dl>
+ <dl><dt><a name="-getDir"><strong>getDir</strong></a>(direc)</dt><dd><tt>Get&nbsp;directory&nbsp;input&nbsp;and&nbsp;start&nbsp;processing&nbsp;the&nbsp;documents.</tt></dd></dl>
+ <dl><dt><a name="-getQuery"><strong>getQuery</strong></a>(query)</dt><dd><tt>Get&nbsp;query&nbsp;sequence&nbsp;and&nbsp;process&nbsp;the&nbsp;query.</tt></dd></dl>
+ <dl><dt><a name="-getSimDocs"><strong>getSimDocs</strong></a>(cur_doc, buckets_dict, df_signature, rows_band)</dt><dd><tt>Returns&nbsp;documents&nbsp;that&nbsp;are&nbsp;in&nbsp;the&nbsp;same&nbsp;bucket&nbsp;as&nbsp;the&nbsp;current&nbsp;document/query</tt></dd></dl>
+ <dl><dt><a name="-get_fileslist"><strong>get_fileslist</strong></a>(destination_folder)</dt><dd><tt>Returns&nbsp;list&nbsp;of&nbsp;files</tt></dd></dl>
+ <dl><dt><a name="-hashBand"><strong>hashBand</strong></a>(cur_band, buckets_list)</dt><dd><tt>Function&nbsp;to&nbsp;hash&nbsp;one&nbsp;band&nbsp;of&nbsp;the&nbsp;document&nbsp;given&nbsp;as&nbsp;input&nbsp;to&nbsp;one&nbsp;of&nbsp;the&nbsp;buckets<br>
+in&nbsp;bucket&nbsp;list&nbsp;given&nbsp;as&nbsp;input.</tt></dd></dl>
+ <dl><dt><a name="-hashQueryBand"><strong>hashQueryBand</strong></a>(cur_band)</dt><dd><tt>helper&nbsp;function&nbsp;to&nbsp;hash&nbsp;one&nbsp;band&nbsp;of&nbsp;the&nbsp;document&nbsp;given&nbsp;as&nbsp;input</tt></dd></dl>
+ <dl><dt><a name="-matrix_create"><strong>matrix_create</strong></a>(lists, z=5)</dt><dd><tt>Generates&nbsp;incidence-matrix&nbsp;for&nbsp;K-grams(Shingles)</tt></dd></dl>
+ <dl><dt><a name="-setBands"><strong>setBands</strong></a>(bns)</dt><dd><tt>helper&nbsp;function&nbsp;to&nbsp;set&nbsp;number&nbsp;of&nbsp;bands</tt></dd></dl>
+ <dl><dt><a name="-setPerms"><strong>setPerms</strong></a>(nps)</dt><dd><tt>helper&nbsp;function&nbsp;to&nbsp;set&nbsp;number&nbsp;of&nbsp;permutations</tt></dd></dl>
+ <dl><dt><a name="-setShingles"><strong>setShingles</strong></a>(ss)</dt><dd><tt>helper&nbsp;function&nbsp;to&nbsp;set&nbsp;size&nbsp;of&nbsp;shingles</tt></dd></dl>
+ <dl><dt><a name="-similarity_Cosine"><strong>similarity_Cosine</strong></a>(query, simDocs, df_signature)</dt><dd><tt>This&nbsp;function&nbsp;finds&nbsp;cosine&nbsp;similarity&nbsp;between&nbsp;two&nbsp;documents</tt></dd></dl>
+ <dl><dt><a name="-similarity_J"><strong>similarity_J</strong></a>(query, simDocs, df_signature)</dt><dd><tt>This&nbsp;function&nbsp;finds&nbsp;jaccard&nbsp;similarity&nbsp;between&nbsp;two&nbsp;documents</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>HEIGHT</strong> = 800<br>
+<strong>WIDTH</strong> = 800<br>
+<strong>background_label</strong> = &lt;tkinter.Label object .!label&gt;<br>
+<strong>button</strong> = &lt;tkinter.Button object .!frame.!button&gt;<br>
+<strong>button2</strong> = &lt;tkinter.Button object .!frame2.!button&gt;<br>
+<strong>button3</strong> = &lt;tkinter.Button object .!frame3.!button&gt;<br>
+<strong>button4</strong> = &lt;tkinter.Button object .!frame4.!button&gt;<br>
+<strong>button5</strong> = &lt;tkinter.Button object .!frame5.!button&gt;<br>
+<strong>canvas</strong> = &lt;tkinter.Canvas object .!canvas&gt;<br>
+<strong>entry</strong> = &lt;tkinter.Entry object .!frame.!entry&gt;<br>
+<strong>entry2</strong> = &lt;tkinter.Entry object .!frame2.!entry&gt;<br>
+<strong>entry3</strong> = &lt;tkinter.Entry object .!frame3.!entry&gt;<br>
+<strong>entry4</strong> = &lt;tkinter.Entry object .!frame4.!entry&gt;<br>
+<strong>entry5</strong> = &lt;tkinter.Entry object .!frame5.!entry&gt;<br>
+<strong>frame</strong> = &lt;tkinter.Frame object .!frame&gt;<br>
+<strong>frame2</strong> = &lt;tkinter.Frame object .!frame2&gt;<br>
+<strong>frame3</strong> = &lt;tkinter.Frame object .!frame3&gt;<br>
+<strong>frame4</strong> = &lt;tkinter.Frame object .!frame4&gt;<br>
+<strong>frame5</strong> = &lt;tkinter.Frame object .!frame5&gt;<br>
+<strong>imagex</strong> = &lt;PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=1400x787&gt;<br>
+<strong>label</strong> = &lt;tkinter.Label object .!frame6.!label&gt;<br>
+<strong>lower_frame</strong> = &lt;tkinter.Frame object .!frame6&gt;<br>
+<strong>photo</strong> = &lt;PIL.ImageTk.PhotoImage object&gt;<br>
+<strong>root</strong> = &lt;tkinter.Tk object .&gt;</td></tr></table>
+</body></html>
